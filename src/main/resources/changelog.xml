@@ -1,0 +1,37 @@
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+   <changeSet id="0" author="saiKumar">
+        <comment>initial Version</comment>
+        <createTable tableName="USER">
+            <column name="USER_ID" type="INTEGER" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="USER_NAME" type="VARCHAR(255)">
+                <constraints nullable= "false" unique= "true"/>
+            </column>
+            <column name="USER_PASSWORD" type="VARCHAR(255)">
+                <constraints nullable= "false"/>
+            </column>
+        </createTable>
+   </changeSet>
+   <changeSet id="1" author="saiKumar">
+        <createTable tableName="PROJECT">
+            <column name="PRJ_ID" type="INTEGER" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="PRJ_NAME" type="VARCHAR(255)" >
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR(255)" >
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_DATE" type="DATETIME" >
+                <constraints nullable="false"/>
+            </column>    
+        </createTable>
+   </changeSet>
+</databaseChangeLog>
